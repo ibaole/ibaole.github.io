@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      881 字
+      893 字
     </span>
   
 
@@ -250,10 +250,10 @@
 输入完 就出现 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a> 打开可以看到你生成的博客了</li>
 </ol>
 <h1 id="2-部署到Github个人创库"><a href="#2-部署到Github个人创库" class="headerlink" title="2.部署到Github个人创库"></a>2.部署到Github个人创库</h1><p>首先，你要有一个Github账号<br>注册成功后登录，在Github.com 左边看到一个New 绿色按钮 这就是创建仓库<br>创建一个和你用户名相同的仓库,比如我的Github用户名是ibaole，那么我创建域名就是ibaole.github.io。<br>Repository name 这里填 用户名.github.io 填完 点击create repository</p>
-<h1 id="3-生成SSH添加到GitHub"><a href="#3-生成SSH添加到GitHub" class="headerlink" title="3.生成SSH添加到GitHub"></a>3.生成SSH添加到GitHub</h1><p>回到Git bash 输入命令  这里用户名填 你的Github用户名，邮箱填 你的Github注册的邮箱</p>
+<h1 id="3-生成SSH添加到GitHub"><a href="#3-生成SSH添加到GitHub" class="headerlink" title="3.生成SSH添加到GitHub"></a>3.生成SSH添加到GitHub</h1><p>回到Git bash 输入命令  这里用户名填 你Github用户名，邮箱填 你Github注册的邮箱</p>
 <figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs verilog">git <span class="hljs-keyword">config</span> --<span class="hljs-keyword">global</span> user<span class="hljs-variable">.name</span> <span class="hljs-string">&quot;用户名&quot;</span><br>git <span class="hljs-keyword">config</span> --<span class="hljs-keyword">global</span> user<span class="hljs-variable">.email</span> <span class="hljs-string">&quot;邮箱&quot;</span><br></code></pre></td></tr></table></figure>
-<p>然后创建SSH，按回车就行</p>
-<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs excel">ssh-keygen -<span class="hljs-built_in">t</span> rsa -C <span class="hljs-string">&quot;youremail&quot;</span><br></code></pre></td></tr></table></figure>
+<p>然后创建SSH，按回车就行 这个邮箱还是你Github注册的邮箱</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs excel">ssh-keygen -<span class="hljs-built_in">t</span> rsa -C <span class="hljs-string">&quot;邮箱&quot;</span><br></code></pre></td></tr></table></figure>
 <p>这个时候生成了.ssh的文件夹。在你的电脑中找到这个文件夹。<br>SSH，就是秘钥 id_rsa是你这台电脑的私人秘钥 id_rsa.pub是公共秘钥 打开id_rsa.pub这个文件 看见里面的秘钥全部复制下来<br>而后在GitHub的setting，找到SSH and GPG keys的设置选项，点击New SSH key，title随便填 key 就是秘钥了粘贴进去 点击Add SSH key 就行了<br>回到 Git bash 输入命令</p>
 <figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs angelscript">ssh -T <span class="hljs-symbol">git@</span>github.com<br></code></pre></td></tr></table></figure>
 <p>出现 Hi 就是成功了</p>
